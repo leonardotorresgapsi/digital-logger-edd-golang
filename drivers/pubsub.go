@@ -74,6 +74,7 @@ func (d *PubSubDriver) Send(record map[string]interface{}) (string, error) {
 	if err != nil {
 		return "", err
 	}
+	fmt.Printf("[digital-edd-logger] Payload JSON: %s\n", data)
 
 	ctx := context.Background()
 	result := d.topic.Publish(ctx, &pubsub.Message{

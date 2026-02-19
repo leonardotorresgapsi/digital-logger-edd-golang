@@ -2,6 +2,7 @@ package eddlogger
 
 import (
 	"encoding/json"
+	"fmt"
 	"strings"
 
 	"github.com/icastillogomar/digital-logger-edd-golang/drivers"
@@ -136,6 +137,8 @@ func (l *EddLogger) Log(opts *LogOptions) (string, error) {
 		DurationMs:  opts.DurationMs,
 		Tags:        opts.Tags,
 	}
+	LogWarning("SendTraceLog")
+	fmt.Printf("[digital-edd-logger] Trace: %+v\n", trace)
 
 	return l.SendTraceLog(trace)
 }
