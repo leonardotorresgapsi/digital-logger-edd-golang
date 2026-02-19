@@ -93,3 +93,9 @@ type LogOptions struct {
 | `GOOGLE_CLOUD_PROJECT` | Project ID de GCP | Solo en prod |
 | `SDKTRACKING_PUBLISH` | `false` para deshabilitar | Opcional |
 | `PUBSUB_TOPIC_NAME` | Nombre del topic | Opcional (default: `digital-edd-sdk`) |
+
+
+10002  git add .
+10003  git commit -m "release: v0.0.2"
+10004  git tag v0.0.2
+10005  git push origin main --tags
