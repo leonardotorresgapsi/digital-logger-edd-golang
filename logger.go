@@ -98,21 +98,21 @@ func (l *EddLogger) Log(opts *LogOptions) (string, error) {
 
 	var request *RequestInfo
 	if opts.Method != "" && opts.Path != "" {
-		h := sanitizeHeaders(opts.RequestHeaders)
+		//h := sanitizeHeaders(opts.RequestHeaders)
 		request = &RequestInfo{
 			Method:  opts.Method,
 			Path:    opts.Path,
-			Headers: h,
+			Headers: opts.RequestHeaders,
 			Body:    opts.RequestBody,
 		}
 	}
 
 	var response *ResponseInfo
 	if opts.StatusCode != 0 {
-		h := sanitizeHeaders(opts.ResponseHeaders)
+		//h := sanitizeHeaders(opts.ResponseHeaders)
 		response = &ResponseInfo{
 			StatusCode: opts.StatusCode,
-			Headers:    h,
+			Headers:    opts.ResponseHeaders,
 			Body:       opts.ResponseBody,
 		}
 	}
