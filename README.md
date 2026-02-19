@@ -5,7 +5,8 @@ SDK de logging para servicios Go con soporte para PostgreSQL (desarrollo) y Goog
 ## Instalación
 
 ```bash
-go get github.com/icastillogomar/digital-logger-edd-golang
+go get github.com/leonardotorresgapsi/digital-logger-edd-golang
+       
 ```
 
 ## Uso Rápido
