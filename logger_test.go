@@ -3,7 +3,7 @@ package eddlogger
 import (
 	"testing"
 
-	"github.com/icastillogomar/digital-logger-edd-golang/drivers"
+	"github.com/leonardotorresgapsi/digital-logger-edd-golang/drivers"
 )
 
 type MockDriver struct {
@@ -92,7 +92,7 @@ func TestLogWithRequestResponse(t *testing.T) {
 	}
 
 	record := mockDriver.records[0]
-	
+
 	request, ok := record["request"].(map[string]interface{})
 	if !ok {
 		t.Fatal("Expected request to be a map")

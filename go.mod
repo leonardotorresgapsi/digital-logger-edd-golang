@@ -1,4 +1,4 @@
-module github.com/icastillogomar/digital-logger-edd-golang
+module github.com/leonardotorresgapsi/digital-logger-edd-golang
 
 go 1.21
 

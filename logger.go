@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/icastillogomar/digital-logger-edd-golang/drivers"
+	"github.com/leonardotorresgapsi/digital-logger-edd-golang/drivers"
 )
 
 type EddLogger struct {

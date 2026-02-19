@@ -15,7 +15,7 @@ go get github.com/leonardotorresgapsi/digital-logger-edd-golang@v0.0.2
 package main
 
 import (
-    eddlogger "github.com/icastillogomar/digital-logger-edd-golang"
+    eddlogger "github.com/leonardotorresgapsi/digital-logger-edd-golang"
 )
 
 func main() {
