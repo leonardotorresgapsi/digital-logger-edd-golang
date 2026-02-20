@@ -57,7 +57,7 @@ func (d *PubSubDriver) ensureClient() error {
 
 	d.client = client
 	d.topic = client.Topic(d.topicName)
-	fmt.Printf("[digital-edd-logger] v3 PubSub conectado al topic: %s\n", d.topicName)
+	fmt.Printf("[digital-edd-logger] PubSub conectado al topic: %s\n", d.topicName)
 	return nil
 }
 
@@ -74,7 +74,7 @@ func (d *PubSubDriver) Send(record map[string]interface{}) (string, error) {
 	if err != nil {
 		return "", err
 	}
-	fmt.Printf("[digital-edd-logger] v3 Payload JSON: %s\n", data)
+	//fmt.Printf("[digital-edd-logger] v3 Payload JSON: %s\n", data)
 
 	ctx := context.Background()
 	result := d.topic.Publish(ctx, &pubsub.Message{

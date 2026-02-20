@@ -2,8 +2,7 @@ package eddlogger
 
 import (
 	"encoding/json"
-	"strings"
-
+	//"github.com/icastillogomar/digital-logger-edd-golang/drivers"
 	"github.com/leonardotorresgapsi/digital-logger-edd-golang/drivers"
 )
 
@@ -98,7 +97,6 @@ func (l *EddLogger) Log(opts *LogOptions) (string, error) {
 
 	var request *RequestInfo
 	if opts.Method != "" && opts.Path != "" {
-		//h := sanitizeHeaders(opts.RequestHeaders)
 		request = &RequestInfo{
 			Method:  opts.Method,
 			Path:    opts.Path,
@@ -109,7 +107,6 @@ func (l *EddLogger) Log(opts *LogOptions) (string, error) {
 
 	var response *ResponseInfo
 	if opts.StatusCode != 0 {
-		//h := sanitizeHeaders(opts.ResponseHeaders)
 		response = &ResponseInfo{
 			StatusCode: opts.StatusCode,
 			Headers:    opts.ResponseHeaders,
@@ -146,22 +143,4 @@ func (l *EddLogger) Close() error {
 		return l.driver.Close()
 	}
 	return nil
-}
-
-func sanitizeHeaders(in map[string]string) map[string]string {
-	if len(in) == 0 {
-		return nil
-	}
-	out := make(map[string]string, len(in))
-	for k, v := range in {
-		k = strings.TrimSpace(k)
-		if k == "" {
-			continue
-		}
-		out[k] = v // allow empty value if you want; BQ requires value, but "" is still a value
-	}
-	if len(out) == 0 {
-		return nil
-	}
-	return out
 }
